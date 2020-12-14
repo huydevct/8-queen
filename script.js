@@ -52,8 +52,8 @@ let changePositonQueen = () => {
             document.getElementById(`${coordinate[0]}${coordinate[1]}`).style.display = "block";
         }
         checkEnd++;
-        if(checkEnd === totalSolution.length){
-            clearInterval(change);
+        if(checkEnd === totalSolution.length - 1){
+            clearInterval(caseChange);
         }
 
     }, speedSolve)
