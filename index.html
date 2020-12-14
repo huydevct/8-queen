@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
-    <title>N-Queens Visualizer    </title>
+    <title>8-Queens</title>
 </head>
 <body>
     <div id="root">
@@ -81,12 +81,14 @@
             </div>
 
             <div class="slidecontainer">
-                <div style="margin: 0 auto">
+                <div style="margin: 0 auto; width: max-content;">
                     <input type="range" min="1" max="1000" value="500" class="slider" id="myRange" oninput="changeContentButton()">
                 </div>
                 <div style="margin: 0 auto">
                     <button id="start-sol-problem" onclick="changePositonQueen()">Random permutations: <span id="speed"></span> ms</button>
+                    <button id="stop-sol-problem" onclick="stopSolve()">Stop</button>
                 </div>
+
             </div>
         </div>
     </div>

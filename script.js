@@ -1,8 +1,9 @@
 let a = [];
-let size = 8;
+let sizeChessBoard = 8;
 let totalSolution = [];
 let caseChange;
 let speedSolve = 500;
+let checkFirstRun = false;
 
 let checkResult = (x2,y2) => {
     for(let i = 1; i < x2 ;i++)
@@ -11,36 +12,42 @@ let checkResult = (x2,y2) => {
     return true;
 }
  
-let returnResult = (size) => {
+let returnResult = (sizeChessBoard) => {
     let tempResult = [];
-    for(let i = 1; i <= size; i++){
+    for(let i = 1; i <= sizeChessBoard; i++){
         tempResult.push(`${a[i]}${i}`)
     }
     totalSolution.push(tempResult);
 }
  
-let Try = (i, size) => {
-    for(let j = 1; j <= size ; j++){
+let recursionNextQueen = (i, sizeChessBoard) => {
+    for(let j = 1; j <= sizeChessBoard ; j++){
         if(checkResult(i,j)){
             a[i] = j;
-            if(i === size ) {
-              returnResult(size);
+            if(i === sizeChessBoard ) {
+              returnResult(sizeChessBoard);
             }
-            Try(i+1,size);
+            recursionNextQueen(i+1,sizeChessBoard);
         }
     }
 }
 
 let cleanChessBoard = () => {
-    for(let x = 1; x <= 8; x++){
-        for(let y =1; y <= 8; y++){
+    for(let x = 1; x <= sizeChessBoard; x++){
+        for(let y =1; y <= sizeChessBoard; y++){
             document.getElementById(`${x}${y}`).style.display = "none";
         }
     }
 }
 
+let stopSolve = () => {
+    clearInterval(caseChange);
+    checkFirstRun = false;
+}
+
 let changePositonQueen = () => {
     let checkEnd = 0;
+    checkFirstRun = true;
 
     clearInterval(caseChange)
 
@@ -62,10 +69,12 @@ let changePositonQueen = () => {
 let changeContentButton = () => {
     document.getElementById("speed").innerHTML = document.getElementById("myRange").value;
     speedSolve = parseInt(document.getElementById("myRange").value);
-    changePositonQueen()
+    if(checkFirstRun){
+        changePositonQueen();
+    }
 }
 
 window.onload = () => {
-    document.getElementById("speed").innerHTML = document.getElementById("myRange").value
-    Try(1,size);
+    document.getElementById("speed").innerHTML = document.getElementById("myRange").value;
+    recursionNextQueen(1,sizeChessBoard);
 }

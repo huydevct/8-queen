@@ -66,7 +66,7 @@ html{
 }
 
 .slidecontainer > div > input{
-    width:264px;
+    width:252px;
 }
 
 .slidecontainer > div > button{
@@ -81,6 +81,10 @@ html{
     border-radius: 50%;
     background: #116194;
     cursor: pointer;
+}
+
+#start-sol-problem{
+    margin-right: 10px
 }
 
 
@@ -162,9 +166,13 @@ button{
     button{
         font-size: 15px;
     }
+
+    #start-sol-problem{
+        display: block;
+    }
 }
 
-@media only screen and (max-width: 1400px) and (min-width: 1300px) {
+@media only screen and (max-width: 1500px) and (min-width: 1000px) {
     .square{
         width: 65px;
         height: 65px;
