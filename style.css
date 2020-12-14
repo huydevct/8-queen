@@ -65,6 +65,14 @@ html{
     margin: 15px auto;
 }
 
+.slidecontainer > div > input{
+    width:264px;
+}
+
+.slidecontainer > div > button{
+    width:264px;
+}
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -85,6 +93,7 @@ button:active {
     box-shadow: 0 2px #27496d;
     transform: translateY(2px);
 }
+
 button:hover {
     background: #3cb0fd;
     text-decoration: none;
@@ -128,14 +137,14 @@ button{
     display: none;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
     .square{
         width: 37px;
         height: 37px;
     }
     
     .queen{
-        font-size : 20px;
+        font-size : 25px;
     }
 
     #chess-board{
@@ -153,4 +162,27 @@ button{
     button{
         font-size: 15px;
     }
-  }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1300px) {
+    .square{
+        width: 65px;
+        height: 65px;
+    }
+    
+    #chess-board{
+        width: 520px;
+        height: 520px;
+        padding: 5px;
+        border: 10px solid #116194;;
+    }
+
+    #title{
+        padding: 20px 0;
+        font-size: 35px;
+    }
+
+    button{
+        font-size: 15px;
+    }
+}

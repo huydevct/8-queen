@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
     <title>N-Queens Visualizer    </title>
 </head>
@@ -12,7 +11,7 @@
     <div id="root">
         <div>
             <div id="title">
-                N-Queens Visualizer
+                8-Queens
             </div>
             <div id="chess-board">
                 <div class="square white" ><span class="queen" id="11">♕</span></div>
@@ -80,6 +79,7 @@
                 <div class="square black" ><span class="queen" id="87">♕</span></div>
                 <div class="square white" ><span class="queen" id="88">♕</span></div>
             </div>
+
             <div class="slidecontainer">
                 <div style="margin: 0 auto">
                     <input type="range" min="1" max="1000" value="500" class="slider" id="myRange" oninput="changeContentButton()">
@@ -88,17 +88,8 @@
                     <button id="start-sol-problem" onclick="changePositonQueen()">Random permutations: <span id="speed"></span> ms</button>
                 </div>
             </div>
-
-               
         </div>
-        
-        
     </div>
-
-    
-
     <script src="./script.js"></script>
-
 </body>
-
 </html>
