@@ -5,7 +5,7 @@ let caseChange;
 let speedSolve = 500;
 let checkFirstRun = false;
 
-console.log("By Devih");
+console.log("from Devih");
 
 let checkResult = (x2,y2) => {
     for(let i = 1; i < x2 ;i++)
